@@ -11,7 +11,7 @@ public class Mercadoria extends Produto {
 
     }
 
-    public double getPeso(peso) {
+    public double getPeso() {
         return this.peso;
     }
 
