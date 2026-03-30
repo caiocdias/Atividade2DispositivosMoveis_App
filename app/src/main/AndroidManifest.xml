@@ -12,6 +12,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Atividade2DispositivosMoveis_App">
         <activity
+            android:name=".CadastroServicoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuscaServicoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CadastroMercadoriaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BuscaMercadoriaActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
