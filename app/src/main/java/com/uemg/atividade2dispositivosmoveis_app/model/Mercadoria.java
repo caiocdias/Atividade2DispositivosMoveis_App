@@ -7,8 +7,9 @@ public class Mercadoria extends Produto {
 
     }
 
-    public Mercadoria(double peso) {
-
+    public Mercadoria(int codigo, String nome, double peso) {
+        super(codigo, nome);
+        setPeso(peso);
     }
 
     public double getPeso() {
