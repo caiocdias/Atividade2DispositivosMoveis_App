@@ -59,12 +59,12 @@
         android:layout_marginTop="72dp"
         android:text="Escolha a opção desejada:"
         app:layout_constraintEnd_toStartOf="@+id/inputMenu"
-        app:layout_constraintHorizontal_bias="0.872"
+        app:layout_constraintHorizontal_bias="0.818"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtMenu" />
 
     <TextView
-        android:id="@+id/textMenu"
+        android:id="@+id/titleMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="MENU"
