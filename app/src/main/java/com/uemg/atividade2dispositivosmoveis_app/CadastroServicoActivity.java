@@ -4,12 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.uemg.atividade2dispositivosmoveis_app.model.Servico;
 
 public class CadastroServicoActivity extends AppCompatActivity {
 
@@ -24,7 +27,23 @@ public class CadastroServicoActivity extends AppCompatActivity {
             return insets;
         });
 
+        EditText codigo = findViewById(R.id.inputCodigoServico);
+        EditText nome = findViewById(R.id.inputNomeServico);
+        EditText valorHora = findViewById(R.id.inputValor);
+        Button btnsalvar = findViewById(R.id.btnOkServico);
         Button btnvoltar = findViewById(R.id.btnVoltarCS);
+
+        btnsalvar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int c = Integer.parseInt(codigo.getText().toString());
+                String n = nome.getText().toString();
+                double v = Double.parseDouble(valorHora.getText().toString());
+
+                Servico s = new Servico(c, n, v);
+                MainActivity.listaServicos.add(s);
+            }
+        });
 
         btnvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
