@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,18 +31,30 @@ public class CadastroServicoActivity extends AppCompatActivity {
         EditText codigo = findViewById(R.id.inputCodigoServico);
         EditText nome = findViewById(R.id.inputNomeServico);
         EditText valorHora = findViewById(R.id.inputValor);
+        TextView output = findViewById(R.id.outputCadastroServico);
         Button btnsalvar = findViewById(R.id.btnOkServico);
         Button btnvoltar = findViewById(R.id.btnVoltarCS);
 
         btnsalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int c = Integer.parseInt(codigo.getText().toString());
-                String n = nome.getText().toString();
-                double v = Double.parseDouble(valorHora.getText().toString());
+                try {
+                    int c = Integer.parseInt(codigo.getText().toString());
+                    String n = nome.getText().toString();
+                    double v = Double.parseDouble(valorHora.getText().toString());
 
-                Servico s = new Servico(c, n, v);
-                MainActivity.listaServicos.add(s);
+                    Servico s = new Servico(c, n, v);
+                    MainActivity.listaServicos.add(s);
+
+                    output.setText("Mercadoria cadastrada com sucesso!");
+
+                    codigo.setText("");
+                    nome.setText("");
+                    valorHora.setText("");
+
+                } catch (Exception e) {
+                    output.setText("Erro ao cadastrar!");
+                }
             }
         });
 

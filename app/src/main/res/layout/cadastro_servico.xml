@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     tools:context=".CadastroServicoActivity">
 
+    <TextView
+        android:id="@+id/outputCadastroServico"
+        android:layout_width="97dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="72dp"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputValor" />
+
     <Button
         android:id="@+id/btnVoltarCS"
         android:layout_width="wrap_content"
