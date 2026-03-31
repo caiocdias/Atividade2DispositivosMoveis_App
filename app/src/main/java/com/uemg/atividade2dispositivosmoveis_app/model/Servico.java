@@ -21,4 +21,9 @@ public class Servico extends Produto{
 
         this.valorHora = valorHora;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\nValor da hora: " + valorHora;
+    }
 }

@@ -34,4 +34,9 @@ public class Produto {
 
         this.nome = nome;
     }
+
+    @Override
+    public String toString() {
+        return "Codigo: " + codigo + "\nNome: " + nome;
+    }
 }

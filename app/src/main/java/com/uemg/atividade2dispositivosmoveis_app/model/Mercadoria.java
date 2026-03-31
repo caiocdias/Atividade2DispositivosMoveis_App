@@ -23,4 +23,8 @@ public class Mercadoria extends Produto {
         this.peso = peso;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\nPeso: " + peso;
+    }
 }
