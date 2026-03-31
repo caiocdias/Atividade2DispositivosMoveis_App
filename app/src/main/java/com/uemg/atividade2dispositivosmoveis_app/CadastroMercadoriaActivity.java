@@ -31,6 +31,7 @@ public class CadastroMercadoriaActivity extends AppCompatActivity {
         EditText nome = findViewById(R.id.inputNomeMercadoria);
         EditText peso = findViewById(R.id.inputPeso);
         Button btnsalvar = findViewById(R.id.btnOkMercadoria);
+        Button btnvoltar = findViewById(R.id.btnVoltarCM);
 
         btnsalvar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,6 +42,15 @@ public class CadastroMercadoriaActivity extends AppCompatActivity {
 
                 Mercadoria m = new Mercadoria(c, n, p);
                 MainActivity.listaMercadorias.add(m);
+            }
+        });
+
+        btnvoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent MainActivity = new Intent(CadastroMercadoriaActivity.this, MainActivity.class);
+                startActivity(MainActivity);
+                finish();
             }
         });
     }

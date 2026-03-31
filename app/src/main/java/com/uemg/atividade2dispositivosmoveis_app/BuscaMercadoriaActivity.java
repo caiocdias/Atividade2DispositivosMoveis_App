@@ -1,12 +1,17 @@
 package com.uemg.atividade2dispositivosmoveis_app;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.uemg.atividade2dispositivosmoveis_app.model.Mercadoria;
 
 public class BuscaMercadoriaActivity extends AppCompatActivity {
 
@@ -19,6 +24,17 @@ public class BuscaMercadoriaActivity extends AppCompatActivity {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
+        });
+
+        Button btnvoltar = findViewById(R.id.btnVoltarBM);
+
+        btnvoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent MainActivity = new Intent(BuscaMercadoriaActivity.this, MainActivity.class);
+                startActivity(MainActivity);
+                finish();
+            }
         });
     }
 }
