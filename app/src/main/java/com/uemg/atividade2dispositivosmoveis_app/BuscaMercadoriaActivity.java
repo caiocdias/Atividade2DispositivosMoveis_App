@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,7 +28,26 @@ public class BuscaMercadoriaActivity extends AppCompatActivity {
             return insets;
         });
 
+
+        EditText inputBuscaMercadoria = findViewById(R.id.inputBuscaMercadoria);
+        TextView outputBuscaMercadoria = findViewById(R.id.outputBuscaMercadoria);
+        Button btnBuscaMercadoria = findViewById(R.id.btnBuscaMercadoria);
         Button btnvoltar = findViewById(R.id.btnVoltarBM);
+
+        btnBuscaMercadoria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String nomeMercadoria = inputBuscaMercadoria.getText().toString();
+                if (!nomeMercadoria.isBlank()) {
+                    for (Mercadoria m : MainActivity.listaMercadorias) {
+                        if (m.getNome().equalsIgnoreCase(nomeMercadoria)) {
+                            outputBuscaMercadoria.setText(m.toString());
+                            return;
+                        }
+                    }
+                }
+            }
+        });
 
         btnvoltar.setOnClickListener(new View.OnClickListener() {
             @Override
